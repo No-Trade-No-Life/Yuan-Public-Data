@@ -3,8 +3,6 @@ name: Update Public Market Data
 on:
   schedule:
     - cron: "0 0 * * 0"
-  pull_request:
-    branches: ["main"]
 
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
@@ -35,7 +33,9 @@ jobs:
             node ./lib/index.js
 
       - run: |
-          cp products.csv README.md LICENSE ./dist
+          rm -rf OHLC index
+          cp ./dist/* .
+          rm -r dist
 
       - name: Deploy Workbench on gh-pages
         uses: peaceiris/actions-gh-pages@v3
