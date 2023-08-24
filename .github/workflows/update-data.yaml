@@ -36,7 +36,7 @@ jobs:
 
       - run: |
           rm -rf OHLC index
-          mv -r ./dist/* .
+          mv ./dist/* .
           rm -rf dist
 
       - name: Deploy Workbench on gh-pages
