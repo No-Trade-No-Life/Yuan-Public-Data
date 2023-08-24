@@ -30,7 +30,7 @@ jobs:
           password: ${{ secrets.DOCKER_PASSWORD }}
           registry: registry.ap-southeast-1.aliyuncs.com
           image: registry.ap-southeast-1.aliyuncs.com/ntnl-y/app-public-data-sync:sha-c8c4b903b1c6d55506814190b300669e83f9ce1c
-          options: -e HV_URL="$HV_URL" -v ${{ github.workspace }}:/data -v ${{ github.workspace }}/dist:/data/output
+          options: -v ${{ github.workspace }}:/data -v ${{ github.workspace }}/dist:/data/output
           run: |
             node ./lib/index.js
 
