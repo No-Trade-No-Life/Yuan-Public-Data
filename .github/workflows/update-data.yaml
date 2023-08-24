@@ -19,7 +19,7 @@ jobs:
           fetch-depth: 0
 
       - run: |
-          ls
+          ls -al
           mkdir -p dist
 
       # run sync scrpit inplace after procotol open source
@@ -36,11 +36,11 @@ jobs:
             node ./lib/index.js
 
       - run: |
-          ls
+          ls -al
           rm -rf OHLC index
           sudo mv ./dist/OHLC ./dist/index .
           sudo rm -rf dist
-          ls
+          ls -al
 
       - name: Deploy Workbench on gh-pages
         uses: peaceiris/actions-gh-pages@v3
