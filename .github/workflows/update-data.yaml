@@ -39,6 +39,7 @@ jobs:
           sudo mv ./dist/OHLC ./dist/index .
           sudo rm -rf dist semicolon_delimited_script
 
+      # Deploy to gh-pages
       - name: Deploy Workbench on gh-pages
         uses: peaceiris/actions-gh-pages@v3
         with:
