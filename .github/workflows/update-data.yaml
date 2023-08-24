@@ -35,9 +35,11 @@ jobs:
             node ./lib/index.js
 
       - run: |
+          ls
           rm -rf OHLC index
-          sudo mv ./dist/* .
+          sudo mv ./dist/OHLC ./dist/index .
           sudo rm -rf dist
+          ls
 
       - name: Deploy Workbench on gh-pages
         uses: peaceiris/actions-gh-pages@v3
