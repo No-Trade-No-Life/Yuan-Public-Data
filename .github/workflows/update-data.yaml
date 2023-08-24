@@ -26,8 +26,8 @@ jobs:
         with:
           username: ${{ secrets.DOCKER_USERNAME }}
           password: ${{ secrets.DOCKER_PASSWORD }}
-          registry: registry.ap-southeast-1.aliyuncs.com/ntnl-y
-          image: app-public-data-sync:sha-c8c4b903b1c6d55506814190b300669e83f9ce1c
+          registry: registry.ap-southeast-1.aliyuncs.com
+          image: registry.ap-southeast-1.aliyuncs.com/ntnl-y/app-public-data-sync:sha-c8c4b903b1c6d55506814190b300669e83f9ce1c
           options: -e HV_URL="${{ secrets.HV_URL }}" -v ${{ github.workspace }}:/data -v ${{ github.workspace }}/dist:/data/output
 
       - run: |
