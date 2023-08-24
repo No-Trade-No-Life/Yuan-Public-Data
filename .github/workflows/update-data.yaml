@@ -19,6 +19,7 @@ jobs:
           fetch-depth: 0
 
       - run: |
+          ls
           mkdir -p dist
 
       # run sync scrpit inplace after procotol open source
