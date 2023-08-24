@@ -37,7 +37,7 @@ jobs:
 
       - run: |
           ls -al
-          rm -rf OHLC index
+          sudo rm -rf OHLC index
           sudo mv ./dist/OHLC ./dist/index .
           sudo rm -rf dist
           ls -al
