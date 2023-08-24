@@ -1,7 +1,7 @@
 declare global {
   interface ISyncContext {
     datasource_ids: string[];
-    getInternalProductId: (string) => string;
+    getInternalProductId: (product_id: string) => string;
   }
   const SyncContext: ISyncContext;
 }
