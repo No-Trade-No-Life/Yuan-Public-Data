@@ -1,0 +1,41 @@
+name: Update Public Market Data
+
+on:
+  schedule:
+    - cron: "0 0 * * 0"
+  pull_request:
+    branches: ["main"]
+
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+
+      - run: |
+          mkdir -p dist
+
+      # run sync scrpit inplace after procotol open source
+      - uses: addnab/docker-run-action@v3
+        with:
+          username: ${{ secrets.DOCKER_USERNAME }}
+          password: ${{ secrets.DOCKER_PASSWORD }}
+          registry: registry.ap-southeast-1.aliyuncs.com/ntnl-y
+          image: app-public-data-sync:sha-c8c4b903b1c6d55506814190b300669e83f9ce1c
+          options: -e HV_URL="${{ secrets.HV_URL }}" -v ${{ github.workspace }}:/data -v ${{ github.workspace }}/dist:/data/output
+
+      - run: |
+          cp products.csv ./dist
+
+      - name: Deploy Workbench on gh-pages
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_branch: gh-pages
+          publish_dir: ./dist
