@@ -35,7 +35,7 @@ jobs:
             node ./lib/index.js
 
       - run: |
-          cp products.csv ./dist
+          cp products.csv README.md LICENSE ./dist
 
       - name: Deploy Workbench on gh-pages
         uses: peaceiris/actions-gh-pages@v3
