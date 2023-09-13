@@ -43,7 +43,7 @@ jobs:
 
       - name: Deploy UI Web on gh-pages
         uses: peaceiris/actions-gh-pages@v3
-        if: ${{ github.ref == 'refs/heads/main' }}
+        # if: ${{ github.ref == 'refs/heads/main' }}
         with:
           deploy_key: ${{ secrets.GITHUB_TOKEN }}
           publish_branch: main
