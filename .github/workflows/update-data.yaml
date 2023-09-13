@@ -41,9 +41,11 @@ jobs:
           sudo rm -rf dist
           sudo chown -R $USER:$USER .
 
-      - name: Create Pull Request
-        uses: peter-evans/create-pull-request@v5
+      - name: Deploy UI Web on gh-pages
+        uses: peaceiris/actions-gh-pages@v3
+        if: ${{ github.ref == 'refs/heads/main' }}
         with:
-          delete-branch: true
-          base: main
-          title: Automate Data Rotate
+          deploy_key: ${{ secrets.GITHUB_TOKEN }}
+          publish_branch: main
+          publish_dir: .
+          exclude_assets: ""
