@@ -45,5 +45,5 @@ jobs:
         uses: peter-evans/create-pull-request@v5
         with:
           delete-branch: true
-          branch: main
+          base: main
           title: Automate Data Rotate
