@@ -39,7 +39,6 @@ jobs:
           sudo rm -rf OHLC index
           sudo mv ./dist/OHLC ./dist/index .
           sudo rm -rf dist
-          sudo chown -R $USER:$USER .
 
       - name: Deploy UI Web on gh-pages
         uses: peaceiris/actions-gh-pages@v3
