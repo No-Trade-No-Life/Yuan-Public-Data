@@ -39,7 +39,7 @@ jobs:
           sudo rm -rf OHLC index
           sudo mv ./dist/OHLC ./dist/index .
           sudo rm -rf dist
-          sudo chmod -R g+w
+          sudo chmod -R g+w .
 
       - name: Create Pull Request
         uses: peter-evans/create-pull-request@v5
