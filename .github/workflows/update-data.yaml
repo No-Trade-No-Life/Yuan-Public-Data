@@ -37,9 +37,12 @@ jobs:
           sudo mv ./dist/OHLC ./dist/index .
           sudo rm -rf dist
 
-      - name: Create Pull Request
-        uses: peter-evans/create-pull-request@v5
+      - name: Deploy UI Web on gh-pages
+        uses: peaceiris/actions-gh-pages@v3
+        if: ${{ github.ref == 'refs/heads/main' }}
         with:
-          delete-branch: true
-          base: main
-          title: Automate Data Rotate
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_branch: main
+          publish_dir: .
+          # ISSUE: we need to keep .github to make CI work continuously
+          exclude_assets: ""
