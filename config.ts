@@ -96,6 +96,41 @@ const product_ids = [
   "XAUUSD",
   "XBRUSD",
   "XPTUSD",
+  "CME_MINI:NQ1!", // 纳指
+  "CME_MINI:ES1!", // 标普500
+  "CME_MINI:EMY1!", // 日经225
+  "CME_MINI:RTY1!", // 罗素2000
+  "CME:LE1!", // 活牛
+  "CME:GF1!", // 育牛
+  "CME:HE1!", // 瘦猪,
+  "CME:6N1!", // 纽元美元
+  "CME:6A1!", // 澳元美元
+  "CME:6J1!", // 日元美元
+  "CME:6B1!", // 英镑美元
+  "CME:6E1!", // 欧元美元
+  "CME:6C1!", // 加元美元
+  "CME:6S1!", // 瑞郎美元
+  "CME:6M1!", // 美元墨西哥比索
+  "CME:6L1!", // 美元巴西雷亚尔
+  "CME:RMB1!", // 美元人民币
+  "CME:RP1!", // 欧元英镑
+  "CME:RY1!", // 欧元日元
+  "CME:6Z1!", // 南非兰特
+  "CBOT:YM1!", // 道指
+  "CBOT:ZS1!", // 大豆
+  "CBOT:ZC1!", // 玉米
+  "CBOT:ZM1!", // 豆粕
+  "CBOT:ZL1!", // 豆油
+  "CBOT:ZW1!", // 小麦
+  "CBOT:ZT1!", // 2年期美债
+  "CBOT:Z3N1!", // 3年期美债
+  "CBOT:ZF1!", // 5年期美债
+  "CBOT:ZN1!", // 10年期美债
+  "CBOT:ZB1!", // 30年期美债
+  "HSI:HSI", // 恒生指数
+  "HSI:HSTECH", // 恒生科技
+  "HKEX:7226", // 南方东英恒生科技指数每日杠杆(2X)产品
+  "HKEX:7552", // 南方东英恒生科技指数每日反向(-2x) 产品
 ];
 
 const durations = ["PT1M", "PT5M", "PT15M", "PT30M", "PT1H", "PT4H", "P1D"];
