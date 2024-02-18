@@ -29,7 +29,7 @@ jobs:
           username: ${{ secrets.DOCKER_USERNAME }}
           password: ${{ secrets.DOCKER_PASSWORD }}
           registry: registry.ap-southeast-1.aliyuncs.com
-          image: registry.ap-southeast-1.aliyuncs.com/ntnl-y/app-public-data-sync:sha-4f6275594d59686f623464ee3acecd43eb94502e
+          image: registry.ap-southeast-1.aliyuncs.com/ntnl-y/app-public-data-sync:sha-0bc95ddcafa4aab90920d8c7e2503cdbc66e5b56
           options: -e HV_URL -e SUPABASE_URL -e SUPABASE_KEY -v ${{ github.workspace }}/dist:/data/output --user 0:0
           run: |
             node ./lib/index.js
